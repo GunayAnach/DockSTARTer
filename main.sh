@@ -406,7 +406,7 @@ main() {
     else
         if ! check_repo; then
             warn "Attempting to clone DockSTARTer repo to ${DETECTED_HOMEDIR}/.docker location."
-            git clone https://github.com/GhostWriters/DockSTARTer "${DETECTED_HOMEDIR}/.docker" || fatal "Failed to clone DockSTARTer repo.\nFailing command: ${F[C]}git clone https://github.com/GhostWriters/DockSTARTer \"${DETECTED_HOMEDIR}/.docker\""
+            git clone https://github.com/GunayAnach/DockSTARTer "${DETECTED_HOMEDIR}/.docker" || fatal "Failed to clone DockSTARTer repo.\nFailing command: ${F[C]}git clone https://github.com/GunayAnach/DockSTARTer \"${DETECTED_HOMEDIR}/.docker\""
             notice "Performing first run install."
             exec bash "${DETECTED_HOMEDIR}/.docker/main.sh" "-vi"
         fi
