@@ -1,0 +1,22 @@
+services:
+  softethervpn:
+    container_name: softethervpn
+    cap_add:
+      - NET_ADMIN    
+    environment:
+      - TZ=${TZ}
+      # - PSK=${SOFTETHERVPN_SALT}    # Salt: if not used, it will default 
+      - USERS=${SOFTETHERVPN_USERS} # Client USERNAME1:PASSWORD1;USERNAME2:PASSWORD2: Set manually here to allow username or set in .env to avoid commit
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: ${SOFTETHERVPN_RESTART}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/softether_data:/mnt"
+      - ${DOCKERCONFDIR}/softether_log:/root/server_log"
+      - ${DOCKERCONFDIR}/softether_packetlog:/root/packet_log"
+      - ${DOCKERCONFDIR}/softether_securitylog:/root/security_log"
+      - ${DOCKERSTORAGEDIR}:/storage

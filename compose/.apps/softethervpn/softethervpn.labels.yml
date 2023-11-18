@@ -1,0 +1,18 @@
+services:
+  softethervpn:
+    labels:
+      com.dockstarter.appinfo.deprecated: "false"
+      com.dockstarter.appinfo.description: "SoftEther VPN Server is a containerised option to allow OpenVPnb like capabilities. Client side has nice and easy to set and use cross platform UI"
+      com.dockstarter.appinfo.nicename: "SoftEtherVPN"
+      com.dockstarter.appvars.softethervpn_enabled: "false"
+      com.dockstarter.appvars.softethervpn_network_mode: ""
+      com.dockstarter.appvars.softethervpn_port_992: "992"
+      com.dockstarter.appvars.softethervpn_port_443: "443"
+      com.dockstarter.appvars.softethervpn_port_1194: "1194"
+      com.dockstarter.appvars.softethervpn_port_5555: "5555"
+      com.dockstarter.appvars.softethervpn_port_500: "500"
+      com.dockstarter.appvars.softethervpn_port_4500: "4500"
+      com.dockstarter.appvars.softethervpn_port_1701: "1701"
+      com.dockstarter.appvars.softethervpn_restart: "unless-stopped"
+      # com.dockstarter.appvars.softethervpn_serverip: "0.0.0.0"
+      com.dockstarter.appvars.softethervpn_tag: "latest"
