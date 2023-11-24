@@ -6,7 +6,7 @@ services:
     environment:
       - TZ=${TZ}
       # - PSK=${SOFTETHERVPN_SALT}    # Salt: if not used, it will default 
-      - USERS=${SOFTETHERVPN_USERS} # Client USERNAME1:PASSWORD1;USERNAME2:PASSWORD2: Set manually here to allow username or set in .env to avoid commit
+      - USERS=${VPN_USER} # Client USERNAME1:PASSWORD1;USERNAME2:PASSWORD2: Set manually here to allow username or set in .env to avoid commit
     logging:
       driver: json-file
       options:
