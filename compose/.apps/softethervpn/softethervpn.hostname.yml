@@ -1,0 +1,3 @@
+services:
+  softethervpn:
+    hostname: ${DOCKERHOSTNAME}

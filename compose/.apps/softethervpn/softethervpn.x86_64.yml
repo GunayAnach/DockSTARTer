@@ -1,0 +1,3 @@
+services:
+  softethervpn:
+    image: siomiz/softethervpn:${SOFTETHERVPN_TAG}

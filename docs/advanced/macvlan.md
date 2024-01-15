@@ -43,7 +43,7 @@ The rest of this tutorial assumes addresses above `X.X.X.190` will be free.
   ip addr add X.X.X.Y/32 dev mymacvlanshim
   ip link set mymacvlanshim up
   # Tell our host to use that interface to communicate with containers
-  ip route add 192.168.86.192/27 dev mymacvlanshim
+  ip route add 192.168.1.192/27 dev mymacvlanshim
   ```
 
 - Reboot
@@ -58,10 +58,10 @@ We could connect our containers to `mymacvlan` and call it a day, but it's very 
 
   ```yaml
   services:
-    ouroboros:
+    ouroboros: # Container name
       networks:
         composemacvlan:
-          ipv4_address: X.X.X.201
+          ipv4_address: X.X.X.201 # Container IP you want to set from the ip-range
   networks:
     composemacvlan:
       external:
