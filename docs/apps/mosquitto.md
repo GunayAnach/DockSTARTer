@@ -13,6 +13,45 @@ subscribing.
 
 ## Install/Setup
 
-This application does not have any specific setup instructions documented. If
-you need assistance setting up this application please visit our
-[support page](https://dockstarter.com/basics/support/).
+Enable mosquite in DS. Then create/edit configuration files as specified in .config/appdata/mosquitto/config/
+
+> mosquitto.conf
+
+    persistence true
+    persistence_location /mosquitto/data/
+    # log_dest file /mosquitto/log/mosquitto.log
+    listener 1883
+    allow_anonymous false
+    # use_identity_as_username false
+    # user frigate
+    password_file /mosquitto/config/mqtt-auth.conf
+    acl_file /mosquitto/config/mqtt-acl.conf
+
+Connect to portainer mosquitto container via sh and generate users and passwords
+
+    mosquitto_passwd -b mosquitto/config/mqtt-auth.conf enter_username enter_password
+
+> mqtt-auth.conf
+
+    frigate:$7$101$QDa46iG.....
+    admin:$7$101$QDa566iA.....
+
+>  mqtt_acl.conf
+
+    user frigate
+    topic /frigate/#
+
+    user admin
+    topic readwrite
+
+
+## Add Mosquito to Home Assistant
+
+Go to HA > Settings > Devices and Services
+Add Integration > MQTT
+
+Broker Options:
+Broker: Homeserver
+Port: 1883
+Username: set in mosquitto.cong - password_file
+Password: set in mosquitto.cong - password_file
