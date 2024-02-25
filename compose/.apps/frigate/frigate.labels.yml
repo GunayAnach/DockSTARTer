@@ -1,0 +1,13 @@
+services:
+  frigate:
+    labels:
+      com.dockstarter.appinfo.deprecated: "false"
+      com.dockstarter.appinfo.description: "NVR With Realtime Object Detection for IP Cameras"
+      com.dockstarter.appinfo.nicename: "Frigate"
+      com.dockstarter.appvars.frigate_enabled: "false"
+      com.dockstarter.appvars.frigate_network_mode: ""
+      com.dockstarter.appvars.frigate_port_5000: "5000"
+      com.dockstarter.appvars.frigate_port_1935: "1935"
+      com.dockstarter.appvars.frigate_restart: "unless-stopped"
+      com.dockstarter.appvars.frigate_serverip: "0.0.0.0"
+      com.dockstarter.appvars.frigate_tag: "stable"

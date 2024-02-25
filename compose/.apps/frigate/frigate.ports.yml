@@ -1,0 +1,5 @@
+services:
+  frigate:
+    ports:
+      - ${FRIGATE_PORT_5000}:5000
+      - ${FRIGATE_PORT_1935}:1935

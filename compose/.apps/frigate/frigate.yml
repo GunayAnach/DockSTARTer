@@ -1,0 +1,25 @@
+services:
+  frigate:
+    container_name: frigate
+    environment:
+      - TZ=${TZ}
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: ${FRIGATE_RESTART}
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+      - /dev/dri:/dev/dri
+    # links:
+    #   - mosquitto
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/frigate/config/config.yml:/config/config.yml:ro
+      - ${DOCKERCONFDIR}/frigate/config:/config
+      - ${DOCKERSTORAGEDIR}/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000

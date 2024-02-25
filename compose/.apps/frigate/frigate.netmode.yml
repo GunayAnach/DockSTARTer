@@ -1,0 +1,3 @@
+services:
+  frigate:
+    network_mode: ${FRIGATE_NETWORK_MODE}
