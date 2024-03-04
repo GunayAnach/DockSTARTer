@@ -1,0 +1,15 @@
+services:
+  popcorntime:
+    container_name: popcorntime # TODO: Replace with online repo
+    environment:
+      - TZ=${TZ}
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: ${POPCORNTIME_RESTART}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERCONFDIR}/popcorntime:/opt/popcorntime
+      - ${DOCKERSTORAGEDIR}:/storage

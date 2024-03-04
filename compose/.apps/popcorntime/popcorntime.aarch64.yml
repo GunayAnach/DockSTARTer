@@ -1,0 +1,3 @@
+services:
+  popcorntime:
+    image: popcorntime:${POPCORNTIME_TAG}

@@ -1,0 +1,14 @@
+services:
+  popcorntime:
+    labels:
+      com.dockstarter.appinfo.deprecated: "false"
+      com.dockstarter.appinfo.description: "Local Torrent Movie player"
+      com.dockstarter.appinfo.nicename: "PopcornTime"
+      com.dockstarter.appvars.popcorntime_enabled: "false"
+      com.dockstarter.appvars.popcorntime_network_mode: ""
+      com.dockstarter.appvars.popcorntime_port_5000: "5000"
+      com.dockstarter.appvars.popcorntime_hostname: "popcorntime"
+      com.dockstarter.appvars.popcorntime_restart: "unless-stopped"
+      com.dockstarter.appvars.popcorntime_serverip: "192.168.1.207"
+      com.dockstarter.appvars.popcorntime_tag: "latest"
+

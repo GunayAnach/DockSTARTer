@@ -1,0 +1,3 @@
+services:
+  popcorntime:
+    network_mode: ${POPCORNTIME_NETWORK_MODE}
