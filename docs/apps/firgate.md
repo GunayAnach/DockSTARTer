@@ -18,6 +18,20 @@
 - In Home Assistant, Settings > Integrations > Add Integration > Frigate
 - - Add IP of the Frigate container and it should detect the streams
 
+
+## Install Coral M.2 TPU with A+E key in Wifi slot
+> Install required Software
+
+https://haade.fr/en/blog/frigate-nvr-google-coral-ai-hardware-acceleration
+
+> Add detectors in Frigate
+
+    detectors:
+    coral:
+        type: edgetpu
+        device: pci # or usb depending on your equipment
+
+
 ## Configuration
 
 > Make sure these files are set in ~/.config/appdata/frigate/config/cofig.yml
@@ -32,8 +46,11 @@
         password: ~~mqtt admin user password~~
 
     detectors:
-    cpu0:
-        type: cpu
+    <!-- cpu0:
+        type: cpu -->
+    coral:
+        type: edgetpu
+        device: pci # or usb depending on your equipment
 
     ffmpeg:
     hwaccel_args:
