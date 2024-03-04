@@ -9,9 +9,11 @@ services:
         max-file: ${DOCKERLOGGING_MAXFILE}
         max-size: ${DOCKERLOGGING_MAXSIZE}
     restart: ${FRIGATE_RESTART}
+    shm_size: "88mb" # update for your cameras based on calculation above    
     devices:
-      - /dev/bus/usb:/dev/bus/usb
-      - /dev/dri:/dev/dri
+      - /dev/apex_0:/dev/apex_0
+      - /dev/dri/renderD128
+      - /dev/dri/card0
     # links:
     #   - mosquitto
     volumes:
