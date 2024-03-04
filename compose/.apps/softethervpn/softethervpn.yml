@@ -15,8 +15,8 @@ services:
     restart: ${SOFTETHERVPN_RESTART}
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERCONFDIR}/softether_data:/mnt"
-      - ${DOCKERCONFDIR}/softether_log:/root/server_log"
-      - ${DOCKERCONFDIR}/softether_packetlog:/root/packet_log"
-      - ${DOCKERCONFDIR}/softether_securitylog:/root/security_log"
+      - ${DOCKERCONFDIR}/softethervpn/softether:/mnt"
+      - ${DOCKERCONFDIR}/softethervpn/softether_log.log:/root/server_log"
+      - ${DOCKERCONFDIR}/softethervpn/softether_packetlog.log:/root/packet_log"
+      - ${DOCKERCONFDIR}/softethervpn/softether_securitylog:/root/security_log"
       - ${DOCKERSTORAGEDIR}:/storage
