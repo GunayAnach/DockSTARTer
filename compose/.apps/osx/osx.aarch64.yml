@@ -1,0 +1,3 @@
+services:
+  osx:
+    image: sickcodes/docker-osx:${OSX_TAG}

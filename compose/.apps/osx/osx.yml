@@ -1,0 +1,18 @@
+services:
+  osx:
+    container_name: osx
+    environment:
+      - TZ=${TZ}
+      - DISPLAY=${DISPLAY:-:0.0}
+      - GENERATE_UNIQUE=true
+      # - MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist'
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: ${OSX_RESTART}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${DOCKERSTORAGEDIR}:/storage

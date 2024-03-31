@@ -1,0 +1,3 @@
+services:
+  osx:
+    network_mode: ${OSX_NETWORK_MODE}

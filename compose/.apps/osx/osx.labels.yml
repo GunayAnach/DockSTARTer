@@ -1,0 +1,13 @@
+services:
+  osx:
+    labels:
+      com.dockstarter.appinfo.deprecated: "false"
+      com.dockstarter.appinfo.description: "Run Mac OS X in Docker with near-native performance! X11 Forwarding! iMessage security research! iPhone USB working! macOS in a Docker container!"
+      com.dockstarter.appinfo.nicename: "OSX"
+      com.dockstarter.appvars.osx_enabled: "false"
+      com.dockstarter.appvars.osxhostname: "osx-monterey"
+      com.dockstarter.appvars.osx_network_mode: ""
+      com.dockstarter.appvars.osx_port_50922: "50922"
+      com.dockstarter.appvars.osx_restart: "unless-stopped"
+      com.dockstarter.appvars.osx_serverip: "0.0.0.0"
+      com.dockstarter.appvars.osx_tag: "monterey"

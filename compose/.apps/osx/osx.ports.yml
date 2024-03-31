@@ -1,0 +1,4 @@
+services:
+  osx:
+    ports:
+      - ${OSX_PORT_50922}:10022
