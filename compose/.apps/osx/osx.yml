@@ -1,6 +1,8 @@
 services:
   osx:
     container_name: osx
+    devices: 
+      - /dev/kvm:/dev/kvm
     environment:
       - TZ=${TZ}
       - DISPLAY=${DISPLAY:-:0.0}
