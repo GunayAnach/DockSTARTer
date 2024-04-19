@@ -2,3 +2,4 @@ services:
   osx:
     ports:
       - ${OSX_PORT_50922}:10022
+      - ${OSX_PORT_4000}:4000

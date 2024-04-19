@@ -19,3 +19,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${DOCKERSTORAGEDIR}:/storage
+      - ${DOCKERCONFDIR}/osx/:/var/lib/docker
+      - ${DOCKERCONFDIR}/osx/findmyfiles/:/Users/user/Library/Caches/com.apple.findmy.fmipcore/
+      # - ${DOCKERCONFDIR}/osx/mac_hdd_ng.img:/image"
+      - ${DOCKERCONFDIR}/osx/monterey_homeserver.img:/home/arch/OSX-KVM/mac_hdd_ng.img
+
