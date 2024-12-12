@@ -9,6 +9,7 @@ services:
       com.dockstarter.appvars.frigate_network_mode: ""
       com.dockstarter.appvars.frigate_port_5000: "5000"
       com.dockstarter.appvars.frigate_port_1935: "1935"
+      com.dockstarter.appvars.frigate_port_8554: "8554"
       com.dockstarter.appvars.frigate_restart: "unless-stopped"
-      com.dockstarter.appvars.frigate_serverip: "192.168.1.2014"
+      com.dockstarter.appvars.frigate_serverip: "192.168.1.204"
       com.dockstarter.appvars.frigate_tag: "stable"

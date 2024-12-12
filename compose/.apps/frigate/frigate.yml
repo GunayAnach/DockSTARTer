@@ -18,7 +18,7 @@ services:
     #   - mosquitto
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERCONFDIR}/frigate/config/config.yml:/config/config.yml:ro
+      - ${DOCKERCONFDIR}/frigate/config/config.yml:/config/config.yml
       - ${DOCKERCONFDIR}/frigate/config:/config
       - ${DOCKERSTORAGEDIR}/frigate:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
