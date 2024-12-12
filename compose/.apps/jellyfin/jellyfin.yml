@@ -14,7 +14,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERCONFDIR}/jellyfin:/config
-      - ${DOCKERSTORAGEDIR}:/storage
-      - ${DOCKERSTORAGEDIR}/Music:/music
-      - ${DOCKERSTORAGEDIR}/Movies:/movies
+      - /mnt/DATA/Music:/music
+      - /mnt/DATA/Movies:/movies
+      - /mnt/usb1tb/Series:/series
       - ${JELLYFIN_TRANSCODEDIR}:/transcode
