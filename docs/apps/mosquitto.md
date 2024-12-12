@@ -27,23 +27,34 @@ Enable mosquite in DS. Then create/edit configuration files as specified in .con
     password_file /mosquitto/config/mqtt-auth.conf
     acl_file /mosquitto/config/mqtt-acl.conf
 
-Connect to portainer mosquitto container via sh and generate users and passwords
+Connect to portainer mosquitto container via ash and generate users and passwords
 
     mosquitto_passwd -b mosquitto/config/mqtt-auth.conf enter_username enter_password
 
 > mqtt-auth.conf
 
-    frigate:$7$101$QDa46iG.....
-    admin:$7$101$QDa566iA.....
+    admin:$7$101$qB...
+    frigate:$7$101$...
+
+Edit the file with VI
+
+    vi mosquitto/config/mqtt-acl.conf
 
 >  mqtt_acl.conf
 
-    user frigate
-    topic /frigate/#
-
     user admin
-    topic readwrite
+    topic readwrite #
 
+    user frigate
+    topic readwrite frigate
+
+
+Save the file and exit :x
+
+Make the file owned by root user and root group 
+
+    chmod 0700 /mosquitto/config/mqtt-acl.conf
+    chown root:root /mosquitto/config/mqtt-auth.conf 
 
 ## Add Mosquito to Home Assistant
 
