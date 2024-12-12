@@ -18,6 +18,16 @@ This application does not have any specific setup instructions documented. If
 you need assistance setting up this application please visit our
 [support page](https://dockstarter.com/basics/support/).
 
+## Reset password
+
+https://www.reddit.com/r/homeassistant/comments/m51hrq/comment/grpdj45/?context=3
+
+According to this post, there is a relatively easy way:
+
+Assuming your configuration volume is hass-conf, edit hass-conf/.storage/auth\_provider.homeassistant. I can't fathom why .storage is a hidden folder, I find this decision absurd, user-hostile and unconventional.
+
+Generate a hashed password according to the algorith in this link, and put it there. I'm going with JDJiJDEyJG5QMWN2NEhpSzNQZkJYMVR6NWE4Ry5lamI2MGhMLzU1U2NhSlAzL09uZURDb01VMVNGQ1NX from that post, which makes the password hello, then log in and change the password with the UI.
+
 ### Suggestions
 
 You may want to create an
