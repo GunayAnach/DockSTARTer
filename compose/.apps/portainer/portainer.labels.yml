@@ -8,4 +8,4 @@ services:
       com.dockstarter.appvars.portainer_network_mode: ""
       com.dockstarter.appvars.portainer_port_9000: "9000"
       com.dockstarter.appvars.portainer_restart: "unless-stopped"
-      com.dockstarter.appvars.portainer_tag: "latest"
+      com.dockstarter.appvars.portainer_tag: "2.20.1"
