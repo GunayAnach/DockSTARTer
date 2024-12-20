@@ -3,19 +3,24 @@ services:
     container_name: frigate
     environment:
       - TZ=${TZ}
+    # DOCKERSTORAGEDIR: /mnt/5b87b5d6-20ce-4611-be09-7fd6c78ac546/frigate
     logging:
       driver: json-file
       options:
         max-file: ${DOCKERLOGGING_MAXFILE}
         max-size: ${DOCKERLOGGING_MAXSIZE}
     restart: ${FRIGATE_RESTART}
-    shm_size: "88mb" # update for your cameras based on calculation above    
+    shm_size: "100mb" # 88MB Small for 3 IPcam if CPU calc used- update for your cameras based on calculation above    
     devices:
       - /dev/apex_0:/dev/apex_0
       - /dev/dri/renderD128
       - /dev/dri/card0
+      # - nvidia.com/gpu=0
     # links:
     #   - mosquitto
+    privileged: true # To be able to edit via UI and access GPU stats etc - https://docs.frigate.video/configuration/hardware_acceleration#configuring-intel-gpu-stats-in-docker
+    cap_add:
+      - CAP_PERFMON
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERCONFDIR}/frigate/config/config.yml:/config/config.yml
@@ -24,4 +29,4 @@ services:
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache
         tmpfs:
-          size: 1000000000
+          size: 5000000000
