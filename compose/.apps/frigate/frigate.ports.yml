@@ -4,3 +4,4 @@ services:
       - ${FRIGATE_PORT_5000}:5000
       - ${FRIGATE_PORT_1935}:1935
       - ${FRIGATE_PORT_8554}:8554
+      - ${FRIGATE_PORT_8971}:8971
