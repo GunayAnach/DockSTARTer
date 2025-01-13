@@ -1,0 +1,3 @@
+services:
+  anisette:
+    network_mode: ${ANISETTE_NETWORK_MODE}

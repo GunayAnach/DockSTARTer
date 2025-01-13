@@ -1,0 +1,5 @@
+services:
+  anisette:
+    ports:
+      - ${ANISETTE_PORT_6969}:6969
+

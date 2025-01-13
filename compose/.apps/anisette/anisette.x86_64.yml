@@ -1,0 +1,4 @@
+services:
+  anisette:
+    image: dadoum/anisette-v3-server
+

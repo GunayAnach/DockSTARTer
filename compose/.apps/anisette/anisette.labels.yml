@@ -1,0 +1,12 @@
+services:
+  anisette:
+    labels:
+      com.dockstarter.appinfo.deprecated: "false"
+      com.dockstarter.appinfo.description: "A supposedly lighter alternative to omnisette-serverLike omnisette-server, it supports both currently supported SideStore's protocols (anisette-v1 and anisette-v3) but it can also be used with AltServer-Linux."
+      com.dockstarter.appinfo.nicename: "Anisette"
+      com.dockstarter.appvars.anisette_enabled: "false"
+      com.dockstarter.appvars.anisette_network_mode: ""
+      com.dockstarter.appvars.anisette_port_6969: "6969"
+      com.dockstarter.appvars.anisette_restart: "unless-stopped"
+      com.dockstarter.appvars.anisette_serverip: "192.168.1.207"
+      com.dockstarter.appvars.anisette_tag: "latest"

@@ -1,0 +1,49 @@
+version: '3'
+
+# name: compose
+services:
+
+# Add Container IP in the IP Range defined here
+  # adguard:
+  #   networks:
+  #     composemacvlan:
+  #       ipv4_address: 192.168.1.202
+  # popcorntime:
+  #   networks:
+  #     composemacvlan:
+  #       ipv4_address: 192.168.1.207
+
+  # Home Assistant Network
+  homeassistant:
+    networks:
+      composemacvlan:
+        ipv4_address: 192.168.1.203        
+  frigate:
+    networks:
+      composemacvlan:
+        ipv4_address: 192.168.1.204
+  jellyfin:
+    networks:
+      composemacvlan:
+        ipv4_address: 192.168.1.205
+  mosquitto:
+    networks:
+      composemacvlan:
+        ipv4_address: 192.168.1.206
+  anisette:
+    networks:
+      composemacvlan:
+        ipv4_address: 192.168.1.207
+  # osx:
+  #   networks:
+  #     composemacvlan:
+  #       ipv4_address: 192.168.1.208
+  
+    # ports:
+    #   - "80:8096"
+
+# Network Connection no change
+networks:
+  composemacvlan:
+    name: mymacvlan
+    external: true

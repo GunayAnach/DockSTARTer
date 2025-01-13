@@ -1,0 +1,3 @@
+services:
+  anisette:
+    hostname: anisette
