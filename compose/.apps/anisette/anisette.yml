@@ -9,7 +9,7 @@ services:
         max-file: ${DOCKERLOGGING_MAXFILE}
         max-size: ${DOCKERLOGGING_MAXSIZE}
     restart: ${ANISETTE_RESTART}
-    user: 1000:1000
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERCONFDIR}/anisette-v3/data/:/app/endpoint/data/
+      - ${DOCKERCONFDIR}/anisette-v3/home/:/home/Alcoholic/.config/anisette-v3/
